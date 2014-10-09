@@ -1,0 +1,376 @@
+/**********************************
+**                               **
+**    © 2014 - Yaser Tallo       **
+** http://YaserTallo.github.io/  **
+**                               **
+**********************************/
+
+/*========================================================//
+//                        General
+//========================================================*/
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  transition: opacity 2s;
+}
+
+
+
+.fadeInDown {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+  0% {
+    @include opacity(0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    @include opacity(1);
+    transform: none;
+  }
+}
+
+
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    @include opacity(0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    @include opacity(1);
+    transform: none;
+  }
+}
+
+
+
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+@keyframes fadeInRight {
+  0% {
+    @include opacity(0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    @include opacity(1);
+    transform: none;
+  }
+}
+
+
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  0% {
+    @include opacity(0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    @include opacity(1);
+    transform: none;
+  }
+}
+
+
+
+/*========================================================//
+//              SPECIFIC FOR INTRO SECTION
+//========================================================*/
+
+.pre-accident {
+  animation-name: pictosSwing;
+  animation-duration: .3s;
+  animation-iteration-count: 2;
+}
+
+
+
+.arrbounce {
+  transition: all 1.5s cubic-bezier(.3, -2, .5, 2) .8s;
+}
+
+
+
+.accident {
+  animation-name: pictosHolder;
+  animation-duration: 2s;
+  animation-delay: .6s;
+  animation-fill-mode: both;
+
+  #picto1, #picto2,
+  #picto3, #picto4,
+  #picto5, #picto6,
+  #picto7, #picto8 {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  #picto5, #picto6,
+  #picto7, #picto8 {
+    animation-delay: .4s;
+  }
+
+  #picto1 {
+    animation-name: picto1;
+    animation-delay: .2s;
+  }
+  
+  #picto2 {
+    animation-name: picto2;
+  }
+  
+  #picto3 {
+    animation-name: picto3;
+    animation-delay: .1s;
+  }
+  
+  #picto4 {
+    animation-name: picto4;
+    animation-delay: .1s;
+  }
+
+  #picto5 {
+    animation-name: picto5;
+  }
+
+  #picto6 {
+    animation-name: picto6;
+  }
+
+  #picto7 {
+    animation-name: picto7;
+  }
+
+  #picto8 {
+    animation-name: picto8;
+  }
+}
+
+
+
+@keyframes pictosHolder {
+  25% {
+    top: 70%;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    @include opacity(1);
+  }
+
+  100% {
+    top: 70%;
+    transform: translate3d(0, 400%, 0) rotate(0deg);
+    @include opacity(0);
+  }
+}
+
+
+
+@keyframes picto1 {
+  0% {
+    transform: translate3d(0, -5px, 0) rotate(6deg);
+  }
+
+  10% {
+    transform: translate3d(30px, 0, 0) rotate(6deg);
+  }
+
+  30% {
+    transform: translate3d(35px, 5px, 0) rotate(-60deg);
+  }
+
+  100% {
+    transform: translate3d(60px, 110px, 0) rotate(-220deg);
+  }
+}
+
+
+
+@keyframes picto2 {
+  0% {
+    transform: translate3d(-14px, -48px, 0) rotate(25deg);
+  }
+
+  60% {
+    transform: translate3d(30px, -28px, 0) rotate(64deg);
+  }
+
+  100% {
+    transform: translate3d(45px, 55px, 0) rotate(90deg);
+  }
+}
+
+
+
+@keyframes picto3 {
+  0% {
+    transform: translate3d(15px, -67px, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(50px, -75px, 0) rotate(42deg);
+  }
+
+  100% {
+    transform: translate3d(95px, 5px, 0) rotate(85deg);
+  }
+}
+
+
+
+@keyframes picto4 {
+  0% {
+    transform: translate3d(-37px, -125px, 0) rotate(0deg);
+  }
+
+  60% {
+    transform: translate3d(-25px, -120px, 0) rotate(45deg);
+  }
+
+  100% {
+    transform: translate3d(-17px, -60px, 0) rotate(75deg);
+  }
+}
+
+
+
+@keyframes picto5 {
+  0% {
+    transform: translate3d(30px, -135px, 0) rotate(-2deg);
+  }
+
+  100% {
+    transform: translate3d(30px, -110px, 0) rotate(90deg);
+  }
+}
+
+
+
+@keyframes picto6 {
+  0% {
+    transform: translate3d(0, -195px, 0) rotate(6deg);
+  }
+
+  100% {
+    transform: translate3d(0, -170px, 0) rotate(90deg);
+  }
+}
+
+
+
+@keyframes picto7 {
+  0%, 30% {
+    transform: translate3d(-34px, -255px, 0) scaleX(-1) rotate(0deg);
+  }
+
+  100% {
+    transform: translate3d(-34px, -230px, 0) scaleX(-1) rotate(90deg);
+  }
+}
+
+
+
+@keyframes picto8 {
+  0%, 40% {
+    transform: translate3d(-68px, -315px, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate3d(-68px, -290px, 0) rotate(70deg);
+  }
+}
+
+
+
+@keyframes pictosSwing {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(8deg) skew(0deg, 0deg);
+  }
+
+  25% {
+    transform: translate3d(0, 0, 0) rotate(8deg) skew(1deg, 0deg);
+  }
+
+  75% {
+    transform: translate3d(0, 0, 0) rotate(8deg) skew(0deg, -1deg);
+  }
+}
+
+
+
+/*========================================================//
+//              SPECIFIC FOR ABOUT SECTION
+//========================================================*/
+
+@keyframes skillColor {
+  10% {
+    color: #fff;
+    transform: scale3d(2,2,1);
+  }
+
+  30% {
+    color: #fff;
+    transform: scale3d(.7,.7,1);
+  }
+
+  40% {
+    color: transparent;
+    transform: scale3d(1,1,1);
+  }
+
+  80% {
+    color: transparent;
+  }
+
+  100% {
+    color: #ff0000;
+  }
+}
+
+
+
+@keyframes skillRoll {
+  0%, 5%, 90%, 100% {
+    transform: translate3d(0,0,0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(200px,0,0) rotate(360deg);
+  }
+}
+
+
+
+@keyframes skillShow {
+  50% {
+    height: 0;
+    margin-top: 200%;
+    @include opacity(0);
+  }
+
+  85% {
+    margin-top: 1em;
+    height: 100%;
+  }
+
+  100% {
+    transform: translate3d(1,1,1);
+    height: 100%;
+    margin-top: 1em;
+    @include opacity(1);
+  }
+}

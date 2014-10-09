@@ -1,0 +1,97 @@
+/**********************************
+**                               **
+**    © 2014 - Yaser Tallo       **
+** http://YaserTallo.github.io/  **
+**                               **
+**********************************/
+
+/*========================================================//
+//                       FONTS
+//========================================================*/
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Open Sans Semibold"),
+       local("OpenSans-Semibold"),
+       url("http://fonts.gstatic.com/s/opensans/v10/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff") format("woff"),
+       url("fonts/OpenSans-Semibold.ttf") format("truetype");
+}
+
+
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Oswald Bold"),
+       local("Oswald-Bold"),
+       url("http://fonts.gstatic.com/s/oswald/v9/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff") format("woff"),
+       url("fonts/Oswald-Bold.ttf") format("truetype");
+}
+
+
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Raleway Heavy"),
+       local("Raleway-Heavy"),
+       url("http://fonts.gstatic.com/s/raleway/v9/PKCRbVvRfd5n7BTjtGiFZBsxEYwM7FgeyaSgU71cLG0.woff") format("woff"),
+       url("fonts/Raleway-Heavy.ttf") format("truetype");
+}
+
+
+
+/*========================================================//
+//                       ICONS
+//========================================================*/
+
+/* 
+ * Foundation Icons v 3.0
+ * Made by ZURB 2013 http://zurb.com/playground/foundation-icon-fonts-3
+ * MIT License
+ */
+
+@font-face {
+  font-family: "foundation-icons";
+  src: url("fonts/foundation-icons.eot");
+  src: url("fonts/foundation-icons.eot?#iefix") format("embedded-opentype"),
+       url("fonts/foundation-icons.woff") format("woff"),
+       url("fonts/foundation-icons.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+[class^="fi-"]:before {
+	font-family: "foundation-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: inherit;
+  font-size: 1.7em;
+}
+
+
+.fi-arrow-down:before { content: "\f109"; }
+.fi-eye:before { content: "\f147"; }
+.fi-marker:before { content: "\f172"; }
+.fi-list:before { content: "\f169"; }
+.fi-eject:before { content: "\f144"; }
+.fi-next:before { content: "\f17c"; }
+.fi-previous:before { content: "\f19c"; }
+.fi-social-facebook:before { content: "\f1c4"; }
+.fi-social-github:before { content: "\f1c9"; }
+.fi-social-google-plus:before { content: "\f1ca"; }
+.fi-social-linkedin:before { content: "\f1d0"; }
+.fi-social-reddit:before { content: "\f1d8"; }
+.fi-social-skype:before { content: "\f1da"; }
+.fi-social-stack-overflow:before { content: "\f1df"; }
+.fi-social-twitter:before { content: "\f1e4"; }

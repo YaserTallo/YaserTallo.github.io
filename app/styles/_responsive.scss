@@ -1,0 +1,341 @@
+/**********************************
+**                               **
+**    © 2014 - Yaser Tallo       **
+** http://YaserTallo.github.io/  **
+**                               **
+**********************************/
+
+/*========================================================//
+//          For screen widths less than 1200px
+//========================================================*/
+@media only screen and (max-width: 1200px) {
+
+  .fi-arrow-down {
+    margin-bottom: 1.5em;
+  }
+
+
+  #about {
+    div {
+      width: 97%;
+      padding: 0 .2em .2em 2em;
+    }
+  }
+
+
+  #projects-filter {
+    h5 {
+      float: none;
+      margin: 0 auto .5em;
+    }
+  }
+
+
+  .project-listing {
+    width: 39%;
+    margin: 2em 5%;
+  }
+}
+
+
+
+/*========================================================//
+//          For screen widths less than 940px
+//========================================================*/
+@media only screen and (max-width: 940px) {
+
+  #projects {
+    padding: 0;
+  }
+
+
+  #projects-filter {
+    margin: 1em 0;
+    float: left;
+
+    h5 {
+      width: 110px;
+      float: none;
+      margin: 0 .5em .5em;
+      text-align: center;
+    }
+
+    li {
+      display: block;
+    }
+
+    button {
+      height: 3em;
+      margin: -2px 0 0;
+      border: solid $complementary;
+      border-width: 2px 0 2px 2px;
+      @include radius($round 0 0 $round);
+
+      &.active,
+      &.active:hover,
+      &:active {
+        top: 0;
+        left: .15em;
+      }
+    }
+  }
+
+
+  .project-listing {
+    width: 90%;
+    margin: 2em 5%;
+  }
+
+
+  #projects-wrap {
+    margin-left: 125px;
+    width: auto;
+    min-width: 185px;
+    border-width: 0 0 0 2px;
+  }
+}
+
+
+
+/*========================================================//
+//          For screen widths less than 768px
+//========================================================*/
+@media only screen and (max-width: 768px) {
+
+  #nav-toggle {
+    display: block;
+  }
+
+
+  .sticky {
+    top: -.7em;
+    background-size: auto 110%;
+
+    .logo {
+      transform: translate3d(-4em, 0, 0) scale(.7);
+    }
+
+    #social-bar {
+      transform: rotate(0);
+
+      li:hover {
+        transform: rotate(0) scale(1.5);
+      }
+    }
+  }
+
+
+  #top-nav,
+  #social-bar {
+    position: absolute;
+    right: 0;
+    margin: 0 auto;
+    background: rgba(0,0,0,.5);
+    display: none;
+    @include radius($round);
+  }
+
+
+  #top-nav {
+    top: 135px;
+    min-width: 200px;
+
+    li {
+      display: block;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+
+  .scroll {
+    display: none;
+  }
+
+
+  #social-bar {
+    top: 84px;
+  }
+
+
+  #about {
+    img {
+      left: 0;
+    }
+  }
+
+
+  #skills {
+    div {
+      width: 100%;
+    }
+
+    #front-dev {
+      border-width: 0 0 2px 0;
+    }
+
+    #back-dev {
+      border-width: 2px 0;
+      margin: -2px 0 0 0;
+    }
+
+    li {
+      margin-left: 40%;
+    }
+  }
+
+
+  form,
+  #contactme {
+    float: none;
+    width: 100%;
+  }
+}
+
+
+
+/*========================================================//
+//          For screen widths less than 620px
+//========================================================*/
+@media only screen and (max-width: 620px) {
+
+  #filter-toggle {
+    display: block;
+  }
+
+
+  #projects-filter {
+    float: none;
+    text-align: right;
+
+    h5 {
+      padding: .5em;
+      width: 100%;
+      text-align: center;
+    }
+
+    li {
+      display: none;
+    }
+
+    button {
+      border-right-width: 2px;
+
+      &.active,
+      &.active:hover,
+      &:active {
+        left: -.5em;
+      }
+    }
+  }
+
+
+  .project-listing {
+    width: 90%;
+    margin: 2em 5%;
+  }
+
+
+  #projects-wrap {
+    margin-left: 0;
+    float: left;
+    width: auto;
+    min-width: 185px;
+    border-width: 2px 0 0 0;
+  }
+}
+
+
+
+/*========================================================//
+//          For screen widths less than 440px
+//========================================================*/
+@media only screen and (max-width: 440px) {
+
+  .fi-arrow-down {
+    margin-bottom: 2.1em;
+  }
+
+
+  #intro-wrapper {
+    max-height: 300px;
+  }
+
+
+  #intro p {
+    font-size: $font-size-base;
+  }
+
+
+  #skills {
+    li, #other-dev li {
+      margin-left: 25%;
+    }
+  }
+
+
+  #filter-toggle {
+    display: block;
+  }
+
+
+  #projects-filter {
+    float: none;
+    text-align: right;
+
+    h5 {
+      padding: .5em;
+      width: 100%;
+      text-align: center;
+    }
+
+    li {
+      display: none;
+    }
+
+    button {
+      border-right-width: 2px;
+
+      &.active,
+      &.active:hover,
+      &:active {
+        left: -.5em;
+      }
+    }
+  }
+
+
+  .project-listing {
+    width: 90%;
+    margin: 2em 5%;
+  }
+
+
+  #projects-wrap {
+    margin-left: 0;
+    float: left;
+    width: auto;
+    min-width: 185px;
+    border-width: 2px 0 0 0;
+  }
+}
+
+
+
+/*========================================================//
+//          For screen heights less than 600px
+//========================================================*/
+@media only screen and (max-height: 600px) {
+
+  #intro-wrapper {
+    margin-top: 1em;
+    max-height: 200px;
+  }
+
+
+  #intro p {
+    font-size: $font-size-base;
+  }
+}

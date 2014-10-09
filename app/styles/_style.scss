@@ -1,0 +1,1048 @@
+/**********************************
+**                               **
+**    © 2014 - Yaser Tallo       **
+** http://YaserTallo.github.io/  **
+**                               **
+**********************************/
+
+
+
+/********************************************************/
+/*                        GENERAL
+/********************************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+body {
+  background: $primary-bg;
+  background: url(../images/bg.png) center center no-repeat fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $text-color;
+  min-width: 310px;
+  overflow-x: hidden;
+}
+
+
+
+p {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $text-color;
+  line-height: 1.25em;
+  text-align: left;
+}
+
+
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: $font-family-headers;
+  margin: 0;
+  line-height: 1.5em;
+  color: $header-color;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: $h1-size;
+}
+
+h2 {
+  font-size: $h2-size;
+}
+
+h3 {
+  font-size: $h3-size;
+}
+
+h4 {
+  font-size: $h4-size;
+}
+
+h5 {
+  font-size: $h5-size;
+}
+
+h6 {
+  font-size: $h6-size;
+}
+
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+
+
+li {
+  transition: transform $duration;
+}
+
+
+
+a,
+button,
+input[type="submit"] {
+  background: transparent;
+  font-family: $font-family-links;
+  font-weight: bold;
+  text-decoration: none;
+  color: $link-color;
+  transition: color $duration, background $duration, text-shadow $duration, opacity $duration;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+
+  &:hover, &:active {
+    color: $link-color-active;
+    text-shadow: 0 5px 20px $link-color-active;
+  }
+}
+
+
+
+b {
+  font-family: $font-family-links;
+  color: lighten($complementary, 20%);
+  text-align: center;
+  text-shadow: 0 0 10px $black;
+}
+
+
+
+strong {
+  color: $secondary;
+  font-weight: bold;
+}
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 2px;
+  text-align: center;
+  background: $primary-bg;
+  background: url('../images/hr.png') center center no-repeat;
+  background-size: cover;
+  z-index: 9
+}
+
+
+
+.container {
+  margin: 0 7%;
+
+  div {
+    padding: 1em;
+    border: 2px solid $border-color;
+    @include radius($round);
+  }
+}
+
+
+
+#section,
+#about,
+#projects,
+#contact,
+footer { 
+  margin-top: 30em;
+}
+
+
+//* Back to top- Button
+.fi-eject {
+  display: none;
+  position: fixed;
+  font-size: 100%;
+  color: $secondary;
+  right: 1em;
+  bottom: 1em;
+  padding: 0 .5em;
+  border: 1px solid $border-color;
+  @include opacity(.2);
+  @include radius(10px);
+  transition: opacity $duration linear;
+  z-index: 100;
+
+  &:hover {
+    cursor: pointer;
+    @include opacity(1);
+  }
+}
+
+
+
+// --------------------- Helpers ---------------------- //
+
+//* Active state
+.active {
+  color: $secondary !important;
+  text-shadow: 0 5px 15px $secondary;
+}
+
+
+
+//* Screen readers only
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+
+
+*:disabled {
+  @include opacity(.5);
+  background: #ddd;
+  color: $black;
+}
+
+
+
+.visible {
+  @include opacity(1);
+}
+
+
+
+.invisible {
+  @include opacity(0);
+}
+
+
+
+/********************************************************/
+/*                        HEADER
+/********************************************************/
+
+header {
+  height: 26%;
+
+  a,
+  button,
+  h4 {
+    font-size: $link-size;
+  }
+}
+
+
+
+.top-bar {
+  position: relative;
+  top: 2em;
+  width: 80%;
+  margin: 0 auto;
+  transition: all .5s linear;
+  z-index: 100;
+
+  li {
+    display: inline-block;
+    margin: 0 1.5%;
+  }
+}
+
+
+
+.logo {
+  display: inline;
+  margin: 0 1em;
+
+  img {
+    margin: 0 .5%;
+    height: 55px;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  h4 {
+    position: relative;
+    color: $link-color;
+    display: inline-block;
+    margin: 0 0 0 .2em;
+  }
+}
+
+
+
+#top-nav {
+  display: table;
+  position: relative;
+  top: -1em;
+  margin: 0 auto;
+  min-width: 600px;
+
+  li {
+    padding: 0 .5%;
+  }
+}
+
+
+
+.fi-eye {
+  float: left;
+  position: relative;
+  top: 1.85em;
+  left: 50%;
+  @include opacity(.2);
+  z-index: 8;
+}
+
+
+
+.scroll {
+  hr {
+    position: relative;
+    top: .5em;
+    z-index: 9;
+  }
+
+  .fi-eye#active {
+    color: $complementary;
+    font-size: 100%;
+    top: -.8em;
+    @include opacity(1);
+    z-index: 10;
+  }
+}
+
+
+
+#social-bar {
+  float: right;
+  position: relative;
+  top: -.2em;
+  width: 200px;
+  height: 50px;
+
+  li:hover {
+    transform: scale(1.5);
+  }
+}
+
+
+
+#nav-toggle {
+  display: none;
+  border: 0;
+  float: right;
+  margin: 0 3%;
+  z-index: 15;
+}
+
+
+
+.no-js #nav-toggle {
+  &:focus ~ #top-nav,
+  &:focus ~ #social-bar {
+    display: table;
+  }
+}
+
+
+
+//* Top bar sticky state
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI4JSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjYzJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjciLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  transition: none;
+
+  .logo {
+    position: fixed;
+    transform: translate3d(-4em, 5%, 0);
+    text-align: center;
+    z-index: 12;
+
+    h4 {
+      top: -.3em;
+    }
+  }
+
+  #top-nav {
+    margin-top: 1em;
+  }
+
+  .scroll {
+    height: 1.2em;
+  }
+
+  #social-bar {
+    position: fixed;
+    right: 0;
+    transform: translate3d(15%, 42%, 0) rotate(30deg);
+    z-index: 12;
+
+    li:hover {
+      transform: rotate(-30deg) scale(1.5);
+    }
+  }
+
+  #nav-toggle {
+    margin-top: .5em;
+  }
+}
+
+
+
+/********************************************************/
+/*                     INTRO SECTION
+/********************************************************/
+
+#intro-wrapper {
+  height: 60%;
+  max-height: 500px;
+  width: 110%;
+  background: $black url('../images/shroom-bg.jpg') center 0 no-repeat fixed;
+  background-size: 120% 100%;
+  text-align: center;
+  border: solid $primary-2;
+  border-width: 2px 0;
+  transform: translate3d(-5%, 0, 0) rotate(-8deg);
+  transform-style: preserve-3d;
+  @include clearfix();
+}
+
+
+
+#intro {
+  width: 90%;
+  margin: auto;
+  padding: 2em;
+  position: relative;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+
+  p {
+    font-size: $p-size-large;
+    color: #F9690E;
+    text-shadow: 0 0 10px $black, 2px 2px 2px $black;
+    font-weight: bold;
+    text-align: center;
+    padding: auto 70%;
+  }
+
+  i {
+    font-size: 80%;
+    line-height: 1.8em;
+    color: lighten(#1F2758, 20%);
+    text-decoration: line-through;
+  }
+}
+
+
+
+.no-csstransforms3d #intro-wrapper,
+.no-csstransforms3d #intro {
+  width: 100%;
+  top: 10%;
+}
+
+
+
+#pictosholder {
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 14.5em;
+  left: 65%;
+  top: 100%;
+  transform: translate3d(0, 0, 0) rotate(8deg);
+
+  .picto {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+
+    img {
+      min-width: 25px;
+      width: 55px;
+      height: auto;
+    }
+  }
+
+  #picto1 {
+    transform: translate3d(0, -5px, 0) rotate(6deg);
+  }
+
+  #picto2 {
+    transform: translate3d(-14px, -48px, 0) rotate(25deg);
+  }
+
+  #picto3 {
+    transform: translate3d(15px, -67px, 0) rotate(0deg);
+  }
+
+  #picto4 {
+    transform: translate3d(-37px, -125px, 0) rotate(0deg);
+  }
+
+  #picto5 {
+    transform: translate3d(30px, -135px, 0) rotate(-2deg);
+  }
+
+  #picto6 {
+    transform: translate3d(0, -195px, 0) rotate(6deg);
+  }
+
+  #picto7 {
+    transform: translate3d(-34px, -255px, 0) scaleX(-1) rotate(0deg);
+  }
+
+  #picto8 {
+    transform: translate3d(-68px, -315px, 0) rotate(0deg);
+  }
+}
+
+
+
+.no-csstransforms3d #pictosholder {
+  display: none;
+}
+
+
+
+#holder {
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+.fi-arrow-down {
+  display: block;
+  margin: 2em auto .8em;
+  padding-top: .4em;
+  width: 60px;
+  height: 60px;
+  font-size: 130%;
+  color: $secondary;
+  text-align: center;
+  border: 1px solid $border-color;
+  @include radius($circle);
+
+  &:hover {
+    @include opacity(1);
+  }
+}
+
+
+
+/********************************************************/
+/*                   PROJECTS SECTION
+/********************************************************/
+
+#projects {
+  padding: 1em 0;
+  @include clearfix();
+}
+
+
+
+#filter-toggle {
+  font-size: $link-size;
+  display: none;
+  float: right;
+  margin: .5em 1em 0;
+  border: 0;
+}
+
+
+
+#projects-filter {
+  display: block;
+  line-height: 1.5em;
+  font-weight: bold;
+  margin: 0 2%;
+
+  h5 {
+    float: left;
+    margin: .3em 0 0 .5em;
+    line-height: 1.5em;
+    color: $link-color;
+  }
+
+  li {
+    display: inline;
+  }
+
+  button {
+    position: relative;
+    width: 125px;
+    height: 2em;
+    margin: 0 .3em;
+    letter-spacing: .05em;
+    border: solid $border-color;
+    border-width: 2px 2px 0;
+    @include radius($round $round 0 0);
+
+    &.active,
+    &.active:hover,
+    &:active {
+      padding: 0;
+      top: .16em;
+      background: $primary-bg;
+    }
+
+    &:hover {
+      color: $link-color;
+      background: rgba($secondary, .3);
+      text-shadow: 5px 0 10px $link-color;
+    }
+  }
+}
+
+
+
+#projects-wrap {
+  background: $primary-bg;
+  border: solid $border-color;
+  border-width: 2px 0;
+  text-align: center;
+  @include clearfix();
+}
+
+
+
+.project-listing {
+  background: $blackish;
+  float: left;
+  padding: 0 0 1em 0 !important;
+  margin: 2em 2%;
+  width: 28.8%;
+  min-width: 200px;
+  height: 16.15em;
+
+  h5 {
+    margin: .5em auto;
+  }
+
+  img {
+    float: left;
+    width: 10em;
+    height: 10em;
+    margin-right: 1em;
+    background: rgba($link-color, .5);
+  }
+
+  p {
+    margin: .5em .1em 0;
+    padding: .5em;
+    background: $blackish;
+    height: 11em;
+    overflow: auto;
+    border-top: 2px solid $border-color;
+  }
+
+  a {
+    background: $secondary;
+    display: block;
+    height: 2.5em;
+    color: $black;
+    line-height: 2.2em;
+    border: 2px solid $black;
+    @include radius(0 0 $round $round);
+
+    &:hover {
+      text-shadow: 5px 0 10px $link-color;
+      background: rgba($link-color, .1);
+    }
+  }
+}
+
+
+
+/********************************************************/
+/*                     ABOUT SECTION
+/********************************************************/
+
+#about {
+  background: url('../images/brains.png') no-repeat 100% 100%;
+  background-size: contain;
+  position: relative;
+
+  h3 {
+    padding: 0 1em;
+  }
+
+  hr {
+    max-width: 310px;
+  }
+
+  div {
+    margin-top: 0;
+    padding: 0 0 0 1em;
+    line-height: 1.5em;
+    width: 65%;
+    border: 0;
+
+    p {
+      text-shadow: 2px 2px 2px $black;
+    }
+  }
+
+  #map {
+    display: inline-block;
+    color: lighten($complementary, 20%);
+    text-decoration: underline;
+
+    &:hover img {
+      display: block;
+    }
+  }
+
+  img {
+    display: none;
+    position: absolute;
+    left: 35%;
+    border: 2px solid $border-color;
+    @include radius($round $round 0 $round);
+    box-shadow: 2px 2px 8px $primary-2;
+  }
+}
+
+
+
+#skills {
+  border-top: 0;
+  line-height: 1.5em;
+  @include clearfix();
+
+  h4 {
+    margin: 1em auto 0;
+  }
+
+  hr {
+    max-width: 310px;
+    margin: 0 auto 3em;
+  }
+
+  p {
+    padding: 0 1em;
+  }
+
+  div {
+    width: 50%;
+    float: left;
+    min-height: 700px;
+    margin-top: -1em;
+  }
+
+  #front-dev {
+    border-width: 0 2px 2px 0;
+  }
+
+  #back-dev {
+    border-width: 0 0 2px 2px;
+    margin-left: -2px;
+  }
+
+  #other-dev {
+    width: 100%;
+    border-width: 2px 0 0 0;
+    min-height: 500px;
+    margin-top: -2px;
+
+    li {
+      margin-left: 40%;
+    }
+  }
+
+  li {
+    min-width: 310px;
+    font-size: $p-size-large;
+    color: $text-color;
+    text-align: left;
+    line-height: 1.5em;
+    margin-left: 35%;
+    padding: 0 1em 2em 0;
+    position: relative;
+    left: -1em;
+    border-left: 2px dotted $secondary;
+
+    ul {
+      height: 0;
+      width: 80%;
+      @include opacity(0);
+      transition: all .3s;
+
+      li {
+        border: 0;
+        min-width: 0;
+        margin-left: 1.5em;
+        padding: 0 2%;
+      }
+    }
+
+    button {
+      color: $text-color;
+      text-align: left;
+      border: 0;
+      padding: 0;
+      margin: -5px 0 0 -33px;
+      height: 69px;
+
+      &:focus,
+      &:focus img,
+      &:focus ~ ul {
+        animation-duration: 3s;
+        animation-fill-mode: both;
+      }
+
+      &:focus img {
+        animation-delay: .5s;
+        animation-name: skillRoll;
+      }
+
+      &:focus ~ ul {
+        animation-delay: .5s;
+        animation-name: skillShow;
+      }
+
+      &:focus {
+        animation-name: skillColor;
+      }
+    }
+
+    img {
+      height: 65px;
+      width: 65px;
+      padding: 5px;
+      margin: 0 1em -.5em 0;
+      @include radius($circle);
+      border: 3px solid $primary-2;
+      background: $blackish;
+    }
+  }
+
+  li:last-of-type {
+    padding-bottom: 0;
+  }
+}
+
+
+
+.no-csstransforms3d #skills li ul,
+.no-cssanimations #skills li ul {
+  height: auto;
+}
+/********************************************************/
+/*                    CONTACT SECTION
+/********************************************************/
+
+#contact {
+  @include clearfix();
+}
+
+
+
+// -------------- Form -------------- //
+p.wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+form {
+  height: 33em;
+  float: left;
+  width: 50%;
+  margin: 0;
+  padding: 1em 0 0;
+  color: $link-color;
+  @include radius($round)
+}
+
+
+
+label,
+input,
+textarea {
+  margin: auto;
+  display: block;
+  border: 1px solid $secondary;
+}
+
+
+
+input,
+textarea {
+  background: transparent;
+  padding: 1em;
+  margin: 0 auto 1em;
+  color: $link-color;
+  font-weight: bold;
+  width: 80%;
+  @include radius(0 0 $round $round);
+
+  &:focus {
+    outline: 0;
+    box-shadow: inset 0 -2px 2px 1px $white, 0 2px 3px 3px $black;
+  }
+
+  &:focus:invalid {
+    box-shadow: inset 0 -2px 2px 1px #ff0000, 0 2px 3px 3px $black;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+
+  &:focus:valid {
+    box-shadow: inset 0 -2px 2px 1px #008000, 0 2px 3px 3px $black;
+  }
+
+  &:valid {
+    box-shadow: inset 0 -2px 2px 1px #008000;
+  }
+}
+
+
+
+input[type="submit"] {
+  font-size: 200%;
+  padding: 0;
+  white-space: normal;
+  height: 3em;
+  @include radius($round);
+  box-shadow: 2px 3px 0 0 darken($secondary, 20%);
+
+  &:hover {
+    background: darken($secondary, 10%);
+    color: $black;
+  }
+
+  &:active {
+    height: 3.1em;
+    box-shadow: none;
+    position: relative;
+    top: .1em;
+    left: .1em;
+  }
+}
+
+
+
+textarea {
+  max-width: 80%;
+  min-width: 80%;
+  min-height: 10em;
+  overflow: auto;
+}
+
+
+
+label {
+  width: 80%;
+  font-family: $font-family-base;
+  font-size: 120%;
+  font-weight: bold;
+  background: $secondary;
+  color: $black;
+  padding-left: 1.3em;
+  line-height: 1.5em;
+  @include radius($round $round 0 0);
+}
+
+// ------------ /Form ----------------
+
+
+
+#contactme {
+  border: 0;
+  width: 49%;
+  float: left;
+
+  h3 {
+    position: relative;
+    left: .5em;
+  }
+
+  hr {
+    max-width: 310px;
+  }
+
+  p {
+    margin: 1em 0 3em;
+    padding: 0 5%;
+    font-size: $p-size-large;
+  }
+
+  ul hr {
+    margin: 0 auto;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 1em;
+
+    &:hover {
+      transform: translateZ(0) scale(1.5);
+    }
+  }
+
+  a {
+    display: inline-block;
+    padding: .5em 0;
+    font-size: $link-size;
+  }
+}
+
+
+
+/********************************************************/
+/*                     FOOTER SECTION
+/********************************************************/
+
+footer p {
+  text-align: center;
+}
+
+
+
+#copy {
+  position: relative;
+  top: 70%;
+  font-size: 85%;
+  
+  p {
+    letter-spacing: .1em;
+    color: $secondary;
+  }
+}

@@ -1,0 +1,81 @@
+/**********************************
+**                               **
+**    © 2014 - Yaser Tallo       **
+** http://YaserTallo.github.io/  **
+**                               **
+**********************************/
+
+/*========================================================//
+//                       VARIABLES
+//========================================================*/
+
+//--- Color ---//
+$primary: #41466c; // Blue
+$primary-bg: #1f2233; // Fallback color bg
+$primary-2: #6c77b0; // Lighter Blue - hr and other small fillings - lighten($primary, 20%)
+$secondary: #f2c450; // Yellow - hover and active
+$complementary: #ff7a00; // Orange - headers and borders
+$black: #000;
+$blackish: #211f1f;
+$white: #f6f5ec;
+
+$text-color: #fff6c8; // Light Yellow
+$header-color: #ffae00; // Lighter Orange
+$link-color: $white;
+$link-color-active: $secondary;
+$border-color: $complementary !default;
+
+//--- Typography ---//
+$font-family-sans-serif: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif-2: Charcoal, Arial, sans-serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base: $font-family-sans-serif;
+$font-family-headers: 'Raleway', $font-family-serif;
+$font-family-links: 'Oswald', $font-family-sans-serif-2;
+
+$font-size-base: 14px;
+$p-size: $font-size-base;
+$p-size-large: 20px;
+$h1-size: ($font-size-base * 5);
+$h2-size: ($font-size-base * 4);
+$h3-size: ($font-size-base * 3);
+$h4-size: ($font-size-base * 2);
+$h5-size: $font-size-base;
+$h6-size: ($font-size-base * 0.5);
+$link-size: 22px;
+
+//--- Border Radius ---//
+$round: 25px;
+$circle: 50%;
+
+
+//--- Transition Duration ---//
+$duration: 1s;
+
+
+/*========================================================//
+//                        MIXINS
+//========================================================*/
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // The space content is to avoid an Opera bug.
+    display: table; // Use of `table` rather than `block` is only necessary if using `:before` to contain the top-margins of child elements.
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin radius($rad...) {
+  border-radius: $rad;
+  background-clip: padding-box; // Stops bg color bleed.
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
