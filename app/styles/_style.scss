@@ -18,6 +18,9 @@
 
 
 html, body {
+  background: $primary-bg;
+  background: url(../images/bg.png) center center no-repeat fixed;
+  background-size: cover;
   height: 100%;
   width: 100%;
 }
@@ -25,9 +28,6 @@ html, body {
 
 
 body {
-  background: $primary-bg;
-  background: url(../images/bg.png) center center no-repeat fixed;
-  background-size: cover;
   font-family: $font-family-base;
   font-size: $font-size-base;
   color: $text-color;
