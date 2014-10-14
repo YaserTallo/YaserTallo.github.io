@@ -211,7 +211,7 @@
     text-align: right;
 
     h5 {
-      padding: .5em;
+      padding: 1em;
       width: 100%;
       text-align: center;
     }
@@ -273,52 +273,6 @@
     li, #other-dev li {
       margin-left: 25%;
     }
-  }
-
-
-  #filter-toggle {
-    display: block;
-  }
-
-
-  #projects-filter {
-    float: none;
-    text-align: right;
-
-    h5 {
-      padding: .5em;
-      width: 100%;
-      text-align: center;
-    }
-
-    li {
-      display: none;
-    }
-
-    button {
-      border-right-width: 2px;
-
-      &.active,
-      &.active:hover,
-      &:active {
-        left: -.5em;
-      }
-    }
-  }
-
-
-  .project-listing {
-    width: 90%;
-    margin: 2em 5%;
-  }
-
-
-  #projects-wrap {
-    margin-left: 0;
-    float: left;
-    width: auto;
-    min-width: 185px;
-    border-width: 2px 0 0 0;
   }
 }
 
